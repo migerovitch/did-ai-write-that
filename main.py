@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 import json
 import pandas as pd
 from tqdm import tqdm
-load_dotenv()
+load_dotenv(override=True)
 
 def get_gptzero_response(payload: str) -> dict:
     conn = http.client.HTTPSConnection("api.gptzero.me")
@@ -42,5 +42,7 @@ def fill_average_generated_prob(df: pd.DataFrame):
     return df
 
 if __name__ == "__main__":
+
+    print(os.getenv("GPTZERO_API_KEY"))
     df = fill_average_generated_prob(read_applications())
     df.to_csv('application_with_average_generated_prob.csv', index=False)
