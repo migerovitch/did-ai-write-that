@@ -1,6 +1,39 @@
 import pandas as pd
 import json
 from typing import List, Dict, Any, Union
+import http.client
+import os
+from tqdm import tqdm
+
+def get_gptzero_response(payload: str) -> dict:
+    conn = http.client.HTTPSConnection("api.gptzero.me")
+
+    headers = {
+        'x-api-key': os.getenv("GPTZERO_API_KEY"),
+        'Content-Type': "application/json",
+        'Accept': "application/json"
+    }
+
+    conn.request("POST", "/v2/predict/text", payload, headers)
+
+    res = conn.getresponse()
+    data = res.read()
+    response_str = data.decode("utf-8")
+    return json.loads(response_str)
+
+def fill_average_generated_prob(df: pd.DataFrame, field_name: str):
+    # Transform explanations to JSON format
+    json_data = transform_column_to_json(df, field_name, as_string=True)
+    
+    # Get GPTZero response for each JSON
+    generated_probs = []
+    for json_str in tqdm(json_data):
+        response = get_gptzero_response(json_str)
+        prob = response['documents'][0]['average_generated_prob']
+        generated_probs.append(prob)
+    # Add probabilities as new column
+    df['average_generated_prob'] = generated_probs
+    return df
 
 def read_applications(file_path: str = 'application.csv') -> pd.DataFrame:
     """
