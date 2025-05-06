@@ -6,7 +6,7 @@ load_dotenv(override=True)
 if __name__ == "__main__":
     applications_file = "application.csv" # EDIT THIS
     field_name = "explanation" # EDIT THIS
-    final_file_name = f"evaluated/{applications_file}_with_{field_name}_evaluated.csv" # don't need to edit this but you can if you want to
+    final_file_name = f"evaluated/{applications_file[:-4]}_with_{field_name}_evaluated.csv" # don't need to edit this but you can if you want to
 
     
     # print(os.getenv("GPTZERO_API_KEY"))
