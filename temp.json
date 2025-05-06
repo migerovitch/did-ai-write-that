@@ -1,0 +1,91 @@
+{
+  "version": "2025-05-02-base",
+  "neatVersion": "3.4b",
+  "scanId": "7368c5d6-4900-4418-b063-a283d03747bd",
+  "documents": [
+    {
+      "sentences": [
+        {
+          "generated_prob": 0.00014961871329433052,
+          "class_probabilities": {
+            "human": 0.9998503923416138,
+            "ai": 0.00013539602514356375,
+            "ai_paraphrased": 1.4222688150766771e-05
+          },
+          "sentence": "AI alignment means destroying systems that are so cool.",
+          "perplexity": 0,
+          "highlight_sentence_for_ai": false
+        },
+        {
+          "generated_prob": 0.990971572289709,
+          "class_probabilities": {
+            "human": 0.00902843102812767,
+            "ai": 0.9907568097114563,
+            "ai_paraphrased": 0.00021476257825270295
+          },
+          "sentence": "Systems that accurately understand, represent, and fulfill human values and intentions, rather than pursuing their.AI alignment is the process of ensuring that artificial intelligence systems understand and act according to human intentions, values, and ethical guidelines, without causing harm through misinterpretation or unintended consequences.",
+          "perplexity": 0,
+          "highlight_sentence_for_ai": true
+        }
+      ],
+      "paragraphs": [
+        {
+          "start_sentence_index": 0,
+          "num_sentences": 2,
+          "completely_generated_prob": 0.3063829682933457
+        }
+      ],
+      "completely_generated_prob": 0.35873331280453785,
+      "class_probabilities": {
+        "human": 0,
+        "ai": 0.35873331280453785,
+        "mixed": 0.6412666871954622
+      },
+      "average_generated_prob": 0.5,
+      "predicted_class": "mixed",
+      "confidence_score": 0.6412666871954622,
+      "confidence_category": "low",
+      "confidence_scores_raw": {
+        "identity": {
+          "ai": 0.35873331280453785,
+          "human": 0,
+          "mixed": 0.6412666871954622
+        }
+      },
+      "confidence_thresholds_raw": {
+        "identity": {
+          "ai": {
+            "reject": 0.7,
+            "low": 0.75,
+            "medium": 0.92
+          },
+          "human": {
+            "reject": 0.7,
+            "low": 0.82,
+            "medium": 0.9126934656800181
+          },
+          "mixed": {
+            "reject": 0.7,
+            "low": 0.8,
+            "medium": 0.88
+          }
+        }
+      },
+      "overall_burstiness": 0,
+      "writing_stats": {},
+      "subclass": {
+        "ai": {},
+        "human": {},
+        "mixed": {}
+      },
+      "result_message": "Our detector is highly uncertain about this document. The writing style and content are not particularly AI-like.",
+      "document_classification": "MIXED",
+      "version": "2025-05-02-base",
+      "language": "en",
+      "pageNumber": 0,
+      "neatVersion": "3.4b",
+      "inputText": "AI alignment means destroying systems that are so cool. Systems that accurately understand, represent, and fulfill human values and intentions, rather than pursuing their.AI alignment is the process of ensuring that artificial intelligence systems understand and act according to human intentions, values, and ethical guidelines, without causing harm through misinterpretation or unintended consequences."
+    }
+  ],
+  "editorDocumentId": null
+}
